@@ -32,7 +32,7 @@ Alternatively you can run composer to create a new project from the latest stabl
 
     Options:
       -i, --input[=INPUT]   Input source (stdin, random.org, internal) [default: "stdin"]
-      -s, --size[=SIZE]     Sample size [default: 5]
+      -s, --size[=SIZE]     Sample size (1 - 2000) [default: 5]
       -V, --version         Display the application version
           --ansi            Force ANSI output
           --no-ansi         Disable ANSI output
