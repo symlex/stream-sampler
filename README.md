@@ -22,6 +22,10 @@ Clone this repository to a local directory and run composer:
     # cd stream-sampler
     # composer update
 
+Alternatively you can run composer to create a new project from the latest stable release and fetch external dependencies:
+
+    # composer create-project lastzero/stream-sampler my-stream-sampler
+
 ## Usage
 
     # app/console sample [options]

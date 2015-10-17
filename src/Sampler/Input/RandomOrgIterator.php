@@ -49,6 +49,7 @@ class RandomOrgIterator implements IteratorAggregate {
      * @throws RequestFailedException If HTTP Request failed
      */
     private function getRandomString () {
+        // Uses the random.org Web service, see https://www.random.org/clients/http/
         $request = new Request(Request::METHOD_GET, '/strings/?num=1&len=' . $this->requestStringLength . '&digits=on&upperalpha=on&loweralpha=on&unique=on&format=plain&rnd=new', 'https://www.random.org');
         $response = new Response();
 
