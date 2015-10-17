@@ -1,0 +1,15 @@
+imports:
+    - { resource: parameters.yml }
+    - { resource: services.yml }
+
+services:
+    command.sample:
+        class: Sampler\Command\SampleCommand
+        arguments: [ 'sample', @sampler, @http.client ]
+
+    app:
+        class: Symfony\Component\Console\Application
+        arguments: [%app.name%, %app.version%]
+        calls:
+            - [ setCatchExceptions, [ true ] ]
+            - [ add, [ @command.sample ] ]

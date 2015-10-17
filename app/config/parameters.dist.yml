@@ -1,0 +1,4 @@
+parameters:
+    app.name: Stream Sampler
+    app.version: '1.0'
+    container.cache: false

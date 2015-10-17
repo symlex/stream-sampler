@@ -1,0 +1,6 @@
+services:
+    sampler:
+        class: Sampler\Sampler\ReservoirSampler
+
+    http.client:
+        class: Buzz\Client\FileGetContents

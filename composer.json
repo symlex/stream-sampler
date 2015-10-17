@@ -1,0 +1,36 @@
+{
+  "name": "lastzero/stream-sampler",
+  "description": "Stream Sampler (3 Sources, CLI)",
+  "license": "MIT",
+  "type": "project",
+  "require": {
+    "silex/silex": "~1.2",
+    "symfony/symfony": "~2.5",
+    "lastzero/symlex-core": "*",
+    "incenteev/composer-parameter-handler": "~2.0",
+    "kriswallsmith/buzz": "~0.15"
+  },
+  "require-dev": {
+    "lastzero/test-tools": "*",
+    "phpunit/phpunit": "~4.8"
+  },
+  "minimum-stability": "dev",
+  "prefer-stable": true,
+  "autoload": {
+    "psr-0": { "": "src/" }
+  },
+  "scripts": {
+    "post-install-cmd": [
+      "Incenteev\\ParameterHandler\\ScriptHandler::buildParameters"
+    ],
+    "post-update-cmd": [
+      "Incenteev\\ParameterHandler\\ScriptHandler::buildParameters"
+    ]
+  },
+  "extra": {
+    "incenteev-parameters": {
+      "file": "app/config/parameters.yml",
+      "dist-file": "app/config/parameters.dist.yml"
+    }
+  }
+}

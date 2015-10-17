@@ -1,0 +1,31 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<phpunit
+        backupGlobals="false"
+        backupStaticAttributes="false"
+        colors="true"
+        convertErrorsToExceptions="true"
+        convertNoticesToExceptions="true"
+        convertWarningsToExceptions="true"
+        processIsolation="false"
+        stopOnError="false"
+        stopOnFailure="false"
+        stopOnIncomplete="false"
+        stopOnSkipped="false"
+        bootstrap="vendor/autoload.php"
+        >
+
+    <testsuites>
+        <testsuite name="Stream Sampler">
+            <directory>src/Sampler/Tests</directory>
+        </testsuite>
+    </testsuites>
+
+    <filter>
+        <whitelist>
+            <directory>src/Sampler</directory>
+            <exclude>
+                <directory>src/Sampler/Tests</directory>
+            </exclude>
+        </whitelist>
+    </filter>
+</phpunit>
