@@ -38,6 +38,8 @@ Alternatively you can run composer to create a new project from the latest stabl
           --ansi            Force ANSI output
           --no-ansi         Disable ANSI output
 
+*Note: If you're using random.org or the internal random character source, input data size will be 10 times the sample size. The maximum sample size is 2000.*
+
 ## Examples
 
     # app/console sample -i internal -s 10
