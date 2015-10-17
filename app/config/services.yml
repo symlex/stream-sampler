@@ -3,4 +3,4 @@ services:
         class: Sampler\Sampler\ReservoirSampler
 
     http.client:
-        class: Buzz\Client\FileGetContents
+        class: Buzz\Client\Curl

@@ -21,7 +21,7 @@ class RandomByteIteratorTest extends UnitTestCase
         $count = 0;
         $result = '';
 
-        foreach($this->input as $char) {
+        foreach ($this->input as $char) {
             $this->assertInternalType('string', $char);
             $this->assertEquals(1, strlen($char));
             $result .= $char;
@@ -33,7 +33,7 @@ class RandomByteIteratorTest extends UnitTestCase
         $secondCount = 0;
         $secondResult = '';
 
-        foreach($this->input as $char) {
+        foreach ($this->input as $char) {
             $this->assertInternalType('string', $char);
             $this->assertEquals(1, strlen($char));
             $secondResult .= $char;

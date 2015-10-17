@@ -18,16 +18,18 @@ class ReservoirSamplerTest extends UnitTestCase
         $this->sampler = $this->get('sampler.reservoir');
     }
 
-    protected function getArrayIteratorFixture () {
+    protected function getArrayIteratorFixture()
+    {
         $inputString = 'THEQUICKBROWNFOXJUMPSOVERTHELAZYDOG';
         $result = new ArrayIterator(str_split($inputString));
         return $result;
     }
 
-    protected function verifySample (Traversable $iterator) {
+    protected function verifySample(Traversable $iterator)
+    {
         $maxLoops = 5;
 
-        for($loop = 0; $loop < $maxLoops; $loop++) {
+        for ($loop = 0; $loop < $maxLoops; $loop++) {
             $sampleLength = rand(0, 15);
 
             $this->sampler->setStream($iterator);
@@ -59,17 +61,20 @@ class ReservoirSamplerTest extends UnitTestCase
         $this->assertCount(count($iterator), $result);
     }
 
-    public function testGetSampleFromRandomByteIterator () {
+    public function testGetSampleFromRandomByteIterator()
+    {
         $input = $this->get('input.randombyte');
         $this->verifySample($input);
     }
 
-    public function testGetSampleFromRandomOrgIterator () {
+    public function testGetSampleFromRandomOrgIterator()
+    {
         $input = $this->get('input.randomorg');
         $this->verifySample($input);
     }
 
-    public function testGetSampleFromStreamIterator () {
+    public function testGetSampleFromStreamIterator()
+    {
         $input = $this->get('input.stream');
         $this->verifySample($input);
     }

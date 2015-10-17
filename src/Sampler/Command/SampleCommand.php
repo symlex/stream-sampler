@@ -41,9 +41,9 @@ class SampleCommand extends Command
     protected function execute(InputInterface $input, OutputInterface $output)
     {
         $inputSource = $input->getOption('input');
-        $size = (int) $input->getOption('size');
+        $size = (int)$input->getOption('size');
 
-        switch($inputSource) {
+        switch ($inputSource) {
             case 'stdin':
                 $stream = new StreamIterator;
                 break;

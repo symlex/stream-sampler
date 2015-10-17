@@ -23,7 +23,7 @@ abstract class AbstractSampler
      */
     protected function getStream()
     {
-        if(is_null($this->stream)) {
+        if (is_null($this->stream)) {
             throw new Exception ('Stream iterator not set');
         }
 

@@ -11,7 +11,8 @@ class StreamIterator implements IteratorAggregate
     /**
      * @param string $stream
      */
-    public function __construct($stream = 'php://stdin') {
+    public function __construct($stream = 'php://stdin')
+    {
         $this->stream = $stream;
     }
 
