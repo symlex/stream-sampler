@@ -14,7 +14,7 @@ See https://en.wikipedia.org/wiki/Reservoir_sampling
 
 ## Setup
 
-This application is compatible with PHP 5.5 / 5.6 and HHVM. It wasn't tested in a Windows environment.
+This application is compatible with PHP 5.5 / 5.6 and HHVM with the *curl* extension enabled.
 
 Clone this repository to a local directory and run composer:
 
@@ -37,13 +37,19 @@ Alternatively you can run composer to create a new project from the latest stabl
           --ansi            Force ANSI output
           --no-ansi         Disable ANSI output
 
-## Example
+## Examples
 
     # app/console sample -i internal -s 10
     vgB4xtQTF3
 
+    # app/console sample -i random.org -s 8
+    FcojkJX1
+
     # app/console sample < LICENSE
     TegcI
+
+    # echo 'Pe7emsXm0EHfwAVx' | app/console sample
+    Xe7es
 
 ## Tests
 
