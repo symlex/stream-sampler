@@ -16,7 +16,13 @@ class RandomByteIterator implements IteratorAggregate {
     }
 
     private function getRandomString () {
-        return substr(base64_encode(openssl_random_pseudo_bytes($this->length)), 0, $this->length);
+        // When using PHP version < 7, this is our best option to get a random binary string
+        $randomBytes = openssl_random_pseudo_bytes($this->length);
+
+        // Convert binary string to readable string using base64 encoding
+        $result = substr(str_replace(array('+','/','='), '', base64_encode($randomBytes)), 0, $this->length);
+
+        return $result;
     }
 
     public function getIterator () {
