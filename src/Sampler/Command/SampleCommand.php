@@ -33,7 +33,7 @@ class SampleCommand extends Command
     protected function configure()
     {
         $this->addOption('input', 'i', InputOption::VALUE_OPTIONAL, 'Input source (stdin, random.org, internal)', 'stdin');
-        $this->addOption('size', 's', InputOption::VALUE_OPTIONAL, 'Sample size', 5);
+        $this->addOption('size', 's', InputOption::VALUE_OPTIONAL, 'Sample size (1 - 2000)', 5);
 
         parent::configure();
     }
@@ -43,15 +43,23 @@ class SampleCommand extends Command
         $inputSource = $input->getOption('input');
         $size = (int)$input->getOption('size');
 
+        if ($size < 1 || $size > 2000) {
+            $output->writeln('<error>Sample size must be a positive integer between 1 and 2000.</error>');
+            return;
+        }
+
+        // Input size should be 10 times the size of the sample
+        $streamSize = $size * 10;
+
         switch ($inputSource) {
             case 'stdin':
                 $stream = new StreamIterator;
                 break;
             case 'random.org':
-                $stream = new RandomOrgIterator($size, $this->httpClient);
+                $stream = new RandomOrgIterator($streamSize, $this->httpClient);
                 break;
             case 'internal':
-                $stream = new RandomByteIterator($size);
+                $stream = new RandomByteIterator($streamSize);
                 break;
             default:
                 $output->writeln('<error>Unknown input source: "' . $inputSource . '". Use either stdin, random.org or internal.</error>');

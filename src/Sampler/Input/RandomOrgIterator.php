@@ -34,7 +34,7 @@ class RandomOrgIterator implements IteratorAggregate
         $length = (int)$length;
 
         if ($length < 1 || $length > 20000) {
-            throw new InvalidArgumentException ('String length must be a positive integer between 1 and 20');
+            throw new InvalidArgumentException ('String length must be a positive integer between 1 and 20000');
         }
 
         $this->requestStringLength = $length;
