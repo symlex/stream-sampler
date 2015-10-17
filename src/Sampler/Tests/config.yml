@@ -20,6 +20,7 @@ services:
     input.randomorg:
         class: Sampler\Input\RandomOrgIterator
         arguments:
+            - 4096
             - @http.client
 
     input.randombyte:

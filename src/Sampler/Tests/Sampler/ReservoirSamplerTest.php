@@ -30,7 +30,7 @@ class ReservoirSamplerTest extends UnitTestCase
         $maxLoops = 5;
 
         for ($loop = 0; $loop < $maxLoops; $loop++) {
-            $sampleLength = rand(0, 15);
+            $sampleLength = rand(0, 30);
 
             $this->sampler->setStream($iterator);
             $result = $this->sampler->getSample($sampleLength);

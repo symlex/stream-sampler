@@ -48,7 +48,7 @@ class SampleCommand extends Command
                 $stream = new StreamIterator;
                 break;
             case 'random.org':
-                $stream = new RandomOrgIterator($this->httpClient);
+                $stream = new RandomOrgIterator($size, $this->httpClient);
                 break;
             case 'internal':
                 $stream = new RandomByteIterator($size);
