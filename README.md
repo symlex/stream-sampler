@@ -2,6 +2,7 @@ Stream Sampler
 ==============
 
 [![Build Status](https://travis-ci.org/lastzero/stream-sampler.png?branch=master)](https://travis-ci.org/lastzero/stream-sampler)
+[![Latest Stable Version](https://poser.pugx.org/lastzero/stream-sampler/v/stable.svg)](https://packagist.org/packages/lastzero/stream-sampler)
 [![License](https://poser.pugx.org/lastzero/stream-sampler/license.svg)](https://packagist.org/packages/lastzero/stream-sampler)
 
 This is an example PHP command-line application based on https://github.com/lastzero/symlex-core
