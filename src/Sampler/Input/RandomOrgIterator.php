@@ -14,7 +14,7 @@ use Sampler\Exception\RequestFailedException;
 class RandomOrgIterator implements IteratorAggregate
 {
     private $httpClient;
-    private $requestStringLength = 20;
+    private $requestStringLength;
 
     /**
      * @param ClientInterface $httpClient For testability reasons, the Buzz HTTP client is used
