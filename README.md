@@ -14,6 +14,8 @@ See https://en.wikipedia.org/wiki/Reservoir_sampling
 
 ## Setup
 
+This application is compatible with PHP 5.5 / 5.6 and HHVM. It wasn't tested in a Windows environment.
+
 Clone this repository to a local directory and run composer:
 
     # git clone https://github.com/lastzero/stream-sampler.git
