@@ -32,31 +32,23 @@ class RandomOrgIteratorTest extends UnitTestCase
     /**
      * @expectedException \Sampler\Exception\InvalidArgumentException
      */
-    public function testSetStringLengthMinus10()
+    public function testSetLengthNegative()
     {
-        $this->input->setStringLength(-10);
+        $this->input->setLength(-2);
     }
 
     /**
      * @expectedException \Sampler\Exception\InvalidArgumentException
      */
-    public function testSetStringLengthZero()
+    public function testSetLengthZero()
     {
-        $this->input->setStringLength(0);
+        $this->input->setLength(0);
     }
 
-    /**
-     * @expectedException \Sampler\Exception\InvalidArgumentException
-     */
-    public function testSetStringLength20001()
+    public function testSetLength()
     {
-        $this->input->setStringLength(20001);
-    }
+        $this->input->setLength(591);
 
-    public function testSetStringLength()
-    {
-        $this->input->setStringLength(591);
-
-        $this->assertEquals(591, $this->input->getStringLength());
+        $this->assertEquals(591, $this->input->getLength());
     }
 }

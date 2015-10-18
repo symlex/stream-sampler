@@ -56,10 +56,12 @@ class SampleCommand extends Command
                 $stream = new StreamIterator;
                 break;
             case 'random.org':
-                $stream = new RandomOrgIterator($streamSize, $this->httpClient);
+                $stream = new RandomOrgIterator($this->httpClient);
+                $stream->setLength($streamSize);
                 break;
             case 'internal':
-                $stream = new RandomByteIterator($streamSize);
+                $stream = new RandomByteIterator();
+                $stream->setLength($streamSize);
                 break;
             default:
                 $output->writeln('<error>Unknown input source: "' . $inputSource . '". Use either stdin, random.org or internal.</error>');

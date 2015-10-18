@@ -2,50 +2,23 @@
 
 namespace Sampler\Input;
 
-use IteratorAggregate;
 use ArrayIterator;
 use Buzz\Client\ClientInterface;
 use Buzz\Message\Request;
 use Buzz\Message\Response;
 use Sampler\Exception\Exception;
-use Sampler\Exception\InvalidArgumentException;
 use Sampler\Exception\RequestFailedException;
 
-class RandomOrgIterator implements IteratorAggregate
+class RandomOrgIterator extends RandomIterator
 {
     private $httpClient;
-    private $requestStringLength;
 
     /**
      * @param ClientInterface $httpClient For testability reasons, the Buzz HTTP client is used
      */
-    public function __construct($stringLength, ClientInterface $httpClient)
+    public function __construct(ClientInterface $httpClient)
     {
-        $this->setStringLength($stringLength);
         $this->httpClient = $httpClient;
-    }
-
-    /**
-     * @param int $length
-     * @throws InvalidArgumentException
-     */
-    public function setStringLength($length)
-    {
-        $length = (int)$length;
-
-        if ($length < 1 || $length > 20000) {
-            throw new InvalidArgumentException ('String length must be a positive integer between 1 and 20000');
-        }
-
-        $this->requestStringLength = $length;
-    }
-
-    /**
-     * @return int
-     */
-    public function getStringLength()
-    {
-        return (int)$this->requestStringLength;
     }
 
     /**
@@ -55,7 +28,7 @@ class RandomOrgIterator implements IteratorAggregate
      */
     private function getRandomString()
     {
-        $requestStringCount = ceil($this->getStringLength() / 20);
+        $requestStringCount = ceil($this->getLength() / 20);
 
         // Uses the random.org Web service, see https://www.random.org/clients/http/
         $request = new Request(
@@ -78,12 +51,12 @@ class RandomOrgIterator implements IteratorAggregate
         $result = str_replace("\n", '', trim($response->getContent()));
 
         // Cut off the additional characters
-        $result = substr($result, 0, $this->getStringLength());
+        $result = substr($result, 0, $this->getLength());
 
         $resultStringLength = strlen($result);
 
         // Check if string matches our expectations
-        if ($resultStringLength != $this->requestStringLength) {
+        if ($resultStringLength != $this->getLength()) {
             throw new Exception('Invalid response string length: ' . $resultStringLength);
         }
 
