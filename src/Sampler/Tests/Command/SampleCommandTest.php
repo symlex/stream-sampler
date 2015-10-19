@@ -39,6 +39,6 @@ class SampleCommandTest extends UnitTestCase
 
         $result = $output->fetch();
 
-        $this->assertEquals(51, strlen($result)); // 10 + 1 for the new line
+        $this->assertEquals(51, strlen($result)); // 50 + 1 for the new line
     }
 }
