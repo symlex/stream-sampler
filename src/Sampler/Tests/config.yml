@@ -24,3 +24,7 @@ services:
 
     input.randombyte:
         class: Sampler\Input\RandomByteIterator
+
+    command.sample:
+        class: Sampler\Command\SampleCommand
+        arguments: [ 'sample', @sampler.reservoir, @http.client ]
