@@ -3,6 +3,7 @@
 namespace Sampler\Input;
 
 use IteratorAggregate;
+use ArrayIterator;
 use Sampler\Exception\InvalidArgumentException;
 
 abstract class RandomIterator implements IteratorAggregate
@@ -13,20 +14,27 @@ abstract class RandomIterator implements IteratorAggregate
      * @param int $length
      * @throws InvalidArgumentException
      */
-    public function setLength ($length) {
-        if($length < 1) {
+    public function setLength($length)
+    {
+        if ($length < 1) {
             throw new InvalidArgumentException('Length must be a positive integer');
         }
 
-        $this->length = (int) $length;
+        $this->length = (int)$length;
     }
 
     /**
      * @return int
      */
-    public function getLength () {
+    public function getLength()
+    {
         return $this->length;
     }
 
-    abstract public function getIterator();
+    public function getIterator()
+    {
+        return new ArrayIterator(str_split($this->getRandomString()));
+    }
+
+    abstract protected function getRandomString();
 }

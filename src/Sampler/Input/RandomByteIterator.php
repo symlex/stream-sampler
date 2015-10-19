@@ -2,11 +2,9 @@
 
 namespace Sampler\Input;
 
-use ArrayIterator;
-
 class RandomByteIterator extends RandomIterator
 {
-    private function getRandomString()
+    protected function getRandomString()
     {
         $length = $this->getLength();
 
@@ -17,10 +15,5 @@ class RandomByteIterator extends RandomIterator
         $result = substr(str_replace(array('+', '/', '='), '', base64_encode($randomBytes)), 0, $length);
 
         return $result;
-    }
-
-    public function getIterator()
-    {
-        return new ArrayIterator(str_split($this->getRandomString()));
     }
 }

@@ -2,7 +2,6 @@
 
 namespace Sampler\Input;
 
-use ArrayIterator;
 use Buzz\Client\ClientInterface;
 use Buzz\Message\Request;
 use Buzz\Message\Response;
@@ -26,7 +25,7 @@ class RandomOrgIterator extends RandomIterator
      * @throws Exception If result has unexpected length
      * @throws RequestFailedException If HTTP Request failed
      */
-    private function getRandomString()
+    protected function getRandomString()
     {
         $requestStringCount = ceil($this->getLength() / 20);
 
@@ -61,10 +60,5 @@ class RandomOrgIterator extends RandomIterator
         }
 
         return $result;
-    }
-
-    public function getIterator()
-    {
-        return new ArrayIterator(str_split($this->getRandomString()));
     }
 }
