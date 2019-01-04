@@ -1,8 +1,9 @@
 {
   "name": "symlex/stream-sampler",
-  "description": "Stream Sampler (3 Sources, CLI)",
+  "description": "Example PHP command-line application based on Symlex Core",
   "license": "MIT",
   "type": "project",
+  "homepage": "https://github.com/symlex/stream-sampler",
   "require": {
     "php": ">=7.1",
     "symlex/symlex-core": "^4.1",
