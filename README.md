@@ -1,18 +1,8 @@
-# Stream Sampler
+# Example CLI app based on [Symlex Core](https://github.com/symlex/symlex-core)
 
 [![License: MIT](https://img.shields.io/badge/license-MIT-blue.svg)](LICENSE)
 [![Build Status](https://travis-ci.org/symlex/stream-sampler.png?branch=master)](https://travis-ci.org/symlex/stream-sampler)
 [![Documentation](https://readthedocs.org/projects/symlex-docs/badge/?version=latest&style=flat)](https://docs.symlex.org/en/latest/)
-
-This is an example PHP command-line application based on [Symlex Core](https://github.com/symlex/symlex-core).
-
-## What does a stream sampler do?
-
-It randomly returns a representative sample of *k* items from a stream of values with unknown and
-possibly very large length. The implementation relies on Algorithm R, which has a complexity of O(N).
-See https://en.wikipedia.org/wiki/Reservoir_sampling
-
-## Setup
 
 This application is compatible with PHP 7.1+ with the *curl* extension enabled.
 
@@ -25,6 +15,12 @@ Clone this repository to a local directory and run composer:
 Alternatively you can run composer to create a new project from the latest stable release and fetch external dependencies:
 
     composer create-project symlex/stream-sampler my-stream-sampler
+
+## What does a stream sampler do?
+
+It randomly returns a representative sample of *k* items from a stream of values with unknown and
+possibly very large length. The implementation relies on Algorithm R, which has a complexity of O(N).
+See https://en.wikipedia.org/wiki/Reservoir_sampling
 
 ## Usage
 
