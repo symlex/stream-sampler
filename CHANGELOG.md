@@ -4,6 +4,8 @@ Changelog
 Release 2
 ---------
 
+* 2.0.1 Documentation clean-up
+
 * 2.0.0 Moved to Symlex; Upgraded to work with latest libraries and PHP 7.1+
 
 Release 1
