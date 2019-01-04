@@ -29,16 +29,4 @@ class SampleCommandTest extends UnitTestCase
 
         $this->assertEquals(11, strlen($result)); // 10 + 1 for the new line
     }
-
-    public function testExecuteRandomOrg()
-    {
-        $input = new ArrayInput(array('--size' => 50, '--input' => 'random.org'), $this->command->getDefinition());
-        $output = new BufferedOutput();
-
-        $this->command->run($input, $output);
-
-        $result = $output->fetch();
-
-        $this->assertEquals(51, strlen($result)); // 50 + 1 for the new line
-    }
 }

@@ -1,31 +1,38 @@
 {
-  "name": "lastzero/stream-sampler",
+  "name": "symlex/stream-sampler",
   "description": "Stream Sampler (3 Sources, CLI)",
   "license": "MIT",
   "type": "project",
   "require": {
-    "silex/silex": "~1.3",
-    "symfony/symfony": "~2.7",
-    "lastzero/symlex-core": "*",
+    "php": ">=7.1",
+    "symlex/symlex-core": "^4.1",
     "incenteev/composer-parameter-handler": "~2.0",
-    "kriswallsmith/buzz": "~0.15"
+    "kriswallsmith/buzz": "0.15"
   },
   "require-dev": {
-    "lastzero/test-tools": "*",
-    "phpunit/phpunit": "~4.8",
-    "sstalle/php7cc": "*"
+    "lastzero/test-tools": "^4.2.0"
   },
   "minimum-stability": "dev",
   "prefer-stable": true,
   "autoload": {
-    "psr-0": { "": "src/" }
+    "psr-4": {
+      "Sampler\\": "src/"
+    }
+  },
+  "config": {
+    "bin-dir": "bin/"
   },
   "scripts": {
+    "post-composer-scripts": [
+      "Incenteev\\ParameterHandler\\ScriptHandler::buildParameters",
+      "app/clearcache",
+      "composer dumpautoload -o"
+    ],
     "post-install-cmd": [
-      "Incenteev\\ParameterHandler\\ScriptHandler::buildParameters"
+      "@post-composer-scripts"
     ],
     "post-update-cmd": [
-      "Incenteev\\ParameterHandler\\ScriptHandler::buildParameters"
+      "@post-composer-scripts"
     ]
   },
   "extra": {

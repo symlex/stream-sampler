@@ -1,11 +1,10 @@
-Stream Sampler
-==============
+# Stream Sampler
 
-[![Build Status](https://travis-ci.org/lastzero/stream-sampler.png?branch=master)](https://travis-ci.org/lastzero/stream-sampler)
-[![Latest Stable Version](https://poser.pugx.org/lastzero/stream-sampler/v/stable.svg)](https://packagist.org/packages/lastzero/stream-sampler)
-[![License](https://poser.pugx.org/lastzero/stream-sampler/license.svg)](https://packagist.org/packages/lastzero/stream-sampler)
+[![License: MIT](https://img.shields.io/badge/license-MIT-blue.svg)](LICENSE)
+[![Build Status](https://travis-ci.org/symlex/stream-sampler.png?branch=master)](https://travis-ci.org/symlex/stream-sampler)
+[![Documentation](https://readthedocs.org/projects/symlex-docs/badge/?version=latest&style=flat)](https://docs.symlex.org/en/latest/)
 
-This is an example PHP command-line application based on https://github.com/lastzero/symlex-core
+This is an example PHP command-line application based on [Symlex Core](https://github.com/symlex/symlex-core).
 
 ## What does a stream sampler do?
 
@@ -15,7 +14,7 @@ See https://en.wikipedia.org/wiki/Reservoir_sampling
 
 ## Setup
 
-This application is compatible with PHP 5.5 / 5.6 and HHVM with the *curl* extension enabled.
+This application is compatible with PHP 7.1+ with the *curl* extension enabled.
 
 Clone this repository to a local directory and run composer:
 
@@ -58,14 +57,13 @@ Alternatively you can run composer to create a new project from the latest stabl
 
 Stream Sampler comes with a pre-configured PHPUnit environment that automatically executes tests found in `src/`:
 
-    # app/phpunit
-    PHPUnit 4.8.13 by Sebastian Bergmann and contributors.
-
-    ............
-
-    Time: 240 ms, Memory: 8.50Mb
-
-    OK (12 tests, 16778 assertions)
+    PHPUnit 7.5.1 by Sebastian Bergmann and contributors.
+    
+    .......                                         7 / 7 (100%)
+    
+    Time: 431 ms, Memory: 8.00MB
+    
+    OK (7 tests, 16892 assertions)
 
 See also: https://github.com/lastzero/test-tools (self-initializing database fixtures and dependency injection for unit tests)
 

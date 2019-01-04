@@ -12,19 +12,19 @@
         stopOnIncomplete="false"
         stopOnSkipped="false"
         bootstrap="vendor/autoload.php"
-        >
+>
 
     <testsuites>
         <testsuite name="Stream Sampler">
-            <directory>src/Sampler/Tests</directory>
+            <directory>src/Tests</directory>
         </testsuite>
     </testsuites>
 
     <filter>
         <whitelist>
-            <directory>src/Sampler</directory>
+            <directory>src</directory>
             <exclude>
-                <directory>src/Sampler/Tests</directory>
+                <directory>src/Tests</directory>
             </exclude>
         </whitelist>
     </filter>

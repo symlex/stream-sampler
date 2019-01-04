@@ -5,11 +5,12 @@ imports:
 services:
     command.sample:
         class: Sampler\Command\SampleCommand
-        arguments: [ 'sample', @sampler, @http.client ]
+        arguments: [ 'sample', "@sampler", "@http.client" ]
 
     app:
+        public: true
         class: Symfony\Component\Console\Application
-        arguments: [%app.name%, %app.version%]
+        arguments: [ "%app.name%", "%app.version%" ]
         calls:
             - [ setCatchExceptions, [ true ] ]
-            - [ add, [ @command.sample ] ]
+            - [ add, [ "@command.sample" ] ]

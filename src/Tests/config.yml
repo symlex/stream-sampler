@@ -2,15 +2,8 @@ services:
     sampler.reservoir:
         class: Sampler\Sampler\ReservoirSampler
 
-    buzz:
-        class: Buzz\Client\Curl
-
     http.client:
-        class: TestTools\Buzz\Client
-        arguments:
-            - @buzz
-        calls:
-            - [useFixtures, ["%fixture.path%"]]
+        class: Buzz\Client\Curl
 
     input.stream:
         class: Sampler\Input\StreamIterator
@@ -20,11 +13,11 @@ services:
     input.randomorg:
         class: Sampler\Input\RandomOrgIterator
         arguments:
-            - @http.client
+            - "@http.client"
 
     input.randombyte:
         class: Sampler\Input\RandomByteIterator
 
     command.sample:
         class: Sampler\Command\SampleCommand
-        arguments: [ 'sample', @sampler.reservoir, @http.client ]
+        arguments: [ 'sample', "@sampler.reservoir", "@http.client" ]

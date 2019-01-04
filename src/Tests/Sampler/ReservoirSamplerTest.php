@@ -67,12 +67,6 @@ class ReservoirSamplerTest extends UnitTestCase
         $this->verifySample($input);
     }
 
-    public function testGetSampleFromRandomOrgIterator()
-    {
-        $input = $this->get('input.randomorg');
-        $this->verifySample($input);
-    }
-
     public function testGetSampleFromStreamIterator()
     {
         $input = $this->get('input.stream');
