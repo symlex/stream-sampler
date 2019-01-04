@@ -18,13 +18,13 @@ This application is compatible with PHP 7.1+ with the *curl* extension enabled.
 
 Clone this repository to a local directory and run composer:
 
-    # git clone https://github.com/lastzero/stream-sampler.git
+    # git clone https://github.com/symlex/stream-sampler.git
     # cd stream-sampler
     # composer update
 
 Alternatively you can run composer to create a new project from the latest stable release and fetch external dependencies:
 
-    # composer create-project lastzero/stream-sampler my-stream-sampler
+    # composer create-project symlex/stream-sampler my-stream-sampler
 
 ## Usage
 
