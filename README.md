@@ -16,6 +16,8 @@ Alternatively you can run composer to create a new project from the latest stabl
 
     composer create-project symlex/stream-sampler my-stream-sampler
 
+Composer will ask for config values to generate `app/config/parameters.yml` for you.
+
 ## What does a stream sampler do?
 
 It randomly returns a representative sample of *k* items from a stream of values with unknown and
