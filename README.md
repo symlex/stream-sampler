@@ -3,6 +3,7 @@
 [![License: MIT](https://img.shields.io/badge/license-MIT-blue.svg)](LICENSE)
 [![Build Status](https://travis-ci.org/symlex/stream-sampler.png?branch=master)](https://travis-ci.org/symlex/stream-sampler)
 [![Documentation](https://readthedocs.org/projects/symlex-docs/badge/?version=latest&style=flat)](https://docs.symlex.org/en/latest/)
+[![Community Chat](https://badges.gitter.im/symlex/community.png)](https://gitter.im/symlex/community)
 
 This application is compatible with PHP 7.1+ with the *curl* extension enabled.
 
